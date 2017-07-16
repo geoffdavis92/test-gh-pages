@@ -1,5 +1,53 @@
 /**	With @support **/
 
+
+@supports (display: grid) {
+  .CardContainer--grid {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+  @media only screen and (min-width: 748px) {
+    .CardContainer--grid {
+      grid-row-gap: 1em;
+      grid-column-gap: 1em;
+      grid-template-columns: repeat(2, calc(50% - .5em));
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .CardContainer--grid {
+      grid-template-columns: repeat(3, calc(33% - .5em));
+    }
+  }
+  @media only screen and (min-width: 1500px) {
+    .CardContainer--grid {
+      grid-template-columns: repeat(4, calc(25% - .5em));
+    }
+  }
+  .CardContainer--grid .Card {
+    width: calc(100% - 2em - 2px);
+  }
+  @media only screen and (min-width: 768px) {
+    .CardContainer--grid .Card {
+      margin: 0 auto;
+      width: calc(100% - 2em - 2px);
+      max-width: none;
+    }
+    .CardContainer--grid .Card:nth-of-type(even) {
+      margin-right: auto;
+    }
+  }
+  .CardContainer--grid .Card--image--left {
+    width: 100%;
+    max-width: calc(100% - 2px);
+  }
+  @media only screen and (min-width: 768px) {
+    .CardContainer--grid .Card--image--left {
+      max-width: none;
+    }
+  }
+}
+
+
 main {
 	color: #333;
 	display: block;
