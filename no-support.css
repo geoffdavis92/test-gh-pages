@@ -1,0 +1,63 @@
+/**	No @support **/
+
+main {
+	color: #333;
+	display: block;
+}
+h1, th {
+	color: #ca1211;
+}
+main {
+	display: grid;
+	grid-template-columns: 100%;
+}
+@media only screen and (min-width: 768px) {
+	article {
+		display: grid;
+		grid-template-columns: repeat(2,calc(50% - .5em));
+		grid-column-gap: 1em;
+	}
+	article p {
+		margin: 0;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	main {
+		grid-template-columns: repeat(2,calc(50% - .5em));
+		grid-column-gap: 1em;
+	}
+	article {
+		display: block;
+	}
+	article p {
+		margin: 1em auto;
+	}
+}
+
+table {
+	border: 1px solid #f5f5f5;
+}
+th, td {
+	padding: .5em !important; 
+}
+@media only screen and (max-width: 768px) {
+	td {
+		text-decoration: underline wavy steelblue;
+	}
+}
+
+main:after {
+  content: "This is after all @support statements";
+  display: block;
+  width: 100%;
+  position: absolute;
+  bottom: -3em;
+  text-align: center;
+  color: #cacaca;
+}
+
+@media only screen and (min-width: 768px) {
+	main:after {
+		bottom: -1em;
+	}
+}
